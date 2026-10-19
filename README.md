@@ -141,6 +141,53 @@ Se desejado, é possível exibir diretamente o valor numeral passado com o parâ
 
 {{ trans_choice('time', 5) }} // Retorna "5 minutes ago"
 
+- Atualizando o idioma no sistema
+
+Nas páginas do sistema, o usuário terá a possibilidade de escolher o idioma a ser exibido. Por padrão, o idioma será aquele configurado no /config/app.php.
+Para isso, é possível criar uma rota get com um parâmetro:
+
+Route::get('/locale/{lang}', [MainController::class, 'locale']);
+
+Essa rota será chamada nas páginas, e o valor enviado no parâmetro representa o idioma escolhido, dentro do padrão ISO 15897 (o mesmo nome usado nas pastas/arquivos no diretório /lang):
+
+href="/locale/pt_BR">Português BR
+
+href="/locale/en">English
+
+href="/locale/es">Español
+
+No MainController, é criado um método que simplesmente atribui o valor à sessão (melhor forma para armazenar o idioma escolhido pelo usuário), e volta à página anterior:
+
+public funcion locale($lang) {</br>
+session(['locale' => $lang]);</br>
+return redirect()->back();</br>
+}
+
+Por fim, para que o idioma seja efetivamente atualizado no sistema, cria-se um middleware, que podemos nomear de SetLocale. Esse middleware irá encobrir todas as rotas, para garantir que a troca de idioma possa ocorrer de qualquer parte do sistema. Ele terá a função de verificar se a sessão possui um local definido e, se tiver, atualiza a linguagem no App. Para implementá-lo, a melhor solução é colocar no arquivo /bootstrap/app.php:
+
+return Application::configure(basePath: dirname(__DIR__)) </br>
+    ->withRouting(
+        web: __DIR__.'/../routes/web.php', 
+        commands: __DIR__.'/../routes/console.php', 
+        health: '/up',
+    ) </br>
+    ->withMiddleware(function (Middleware $middleware): void { </br>
+        $middleware->web(append: [\App\Http\Middleware\SetLocale::class,]); // Linha adicionada para implementar o middleware às rotas do /routes/web.php</br>
+    }) </br>
+    ->withExceptions(function (Exceptions $exceptions): void { </br>
+        // </br>
+    })->create(); </br>
+
+Função no middleware SetLocale:
+
+public function handle(Request $request, Closure $next): Response </br>
+{ </br>
+    if (session()->has('locale')) { </br>
+        App::setLocale(session('locale')); </br>
+    } </br>
+
+    return $next($request);
+} </br>
 
 - Referências
 
