@@ -14,51 +14,47 @@ A primeira maneira é utilizando arquivos php com arrays associativos:
 
 /lang/pt_BR/messages.php
 
-<?php
-
-return [
-    "welcome" => "Bem-vindo!",
+return [ </br>
+    "welcome" => "Bem-vindo!",</br>
 ];
 
 /lang/en/messages.php
 
-<?php
-
-return [
-    "welcome" => "Welcome!",
+return [</br>
+    "welcome" => "Welcome!",</br>
 ];
 
 Estes arquivos estarão em pastas separadas para cada língua, todas dentro da pasta lang, por exemplo:
 
-/lang
-    /en
-        messages.php
-    /pt_BR
-        messages.php
-    /es
-        messages.php
+/lang</br>
+    ->/en</br>
+        --->messages.php</br>
+    ->/pt_BR</br>
+        --->messages.php</br>
+    ->/es</br>
+        --->messages.php</br>
 
 *Note que, para nomear esses diretórios, é necessário seguir o padrão ISO 15897, principalmente para línguar específicas de uma região, como inglês britânico (en_GB) e espanhol mexicano (es_MX).
 
 A segunda maneira é utilizando arquivos json. Diferente de arquivos php, os arquivos json não precisam estar em pastas separadas, pois cada um deles representará um idioma:
 
-/lang
-    en.json
-    pt_BR.json
-    es.json
+/lang</br>
+    ->en.json
+    ->pt_BR.json
+    ->es.json
 
 Além disso, ao invés de utilizar chaves curtas, ele utiliza a própria frase como chave:
 
 /lang/en.json
 
-{
-    "Bem-vindo ao nosso sistema!": "Welcome to our system!",
+{</br>
+    "Bem-vindo ao nosso sistema!": "Welcome to our system!",</br>
 }
 
 /lang/es.json
 
-{
-    "Bem-vindo ao nosso sistema!": "Bienvenido a nuestro sistema!",
+{</br>
+    "Bem-vindo ao nosso sistema!": "Bienvenido a nuestro sistema!",</br>
 }
 
 Esse caso é mais utilizado para sistemas grandes e complexos, uma vez que se torna complicado criar chaves que remetam a uma frase em específico, ficando mais fácil localizar e manter manutenções das traduções.
@@ -144,3 +140,8 @@ Se desejado, é possível exibir diretamente o valor numeral passado com o parâ
 'time' => '{0} Now|{1} :count minute ago|[2,*] :count minutes ago'
 
 {{ trans_choice('time', 5) }} // Retorna "5 minutes ago"
+
+
+- Referências
+
+https://laravel.com/framework/docs/localization
