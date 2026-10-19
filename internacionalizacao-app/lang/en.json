@@ -1,0 +1,17 @@
+{
+    "Bem-vindo ao BooKing": "Welcome to BooKing",
+    "Encontre os melhores preços no rei dos voos": "Find the best prices with the flights king",
+    "Saiba mais": "See more",
+    "Vá para a página json": "Go to the json page",
+    "Vá para a página anterior": "Go back a page",
+    "Vá para a página de teste de parâmetros": "Go to the parameters testing page",
+    "Parâmetros": "Parameters",
+    "Digite seu nome": "Type your name",
+    "Prazer em conhecê-lo, :NAME": "Nice to meet you, :NAME",
+    "Prazer em conhecê-lo, :Name": "Nice to meet you, :Name",
+    "Vá para a página de teste de pluralização": "Go to the pluralization testing page",
+    "Pluralização": "Pluralization",
+    "Digite um número de laranjas": "Type a number of oranges",
+    "Tem uma laranja|Tem muitas laranjas": "There is one orange|There are many oranges",
+    "{0} Não tem laranajas|[1,10] Tem algumas laranajas|[11,*] Tem muitas laranajas": "{0} There is no orange|[1,10] There are a few oranges|[11,*] There are many oranges"
+}

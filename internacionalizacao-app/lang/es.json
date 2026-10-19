@@ -1,0 +1,17 @@
+{
+    "Bem-vindo ao BooKing": "Bienvenido a Booking",
+    "Encontre os melhores preços no rei dos voos": "Encontre los mejores precios con el rei de los viajes",
+    "Saiba mais": "Más información",
+    "Vá para a página json": "Va para la página json",
+    "Vá para a página anterior": "Vuelva a la ultima pagina",
+    "Vá para a página de teste de parâmetros": "Va para la página de pruebas de parámetros",
+    "Parâmetros": "Parámetros",
+    "Digite seu nome": "Escribe tu nombre",
+    "Prazer em conhecê-lo, :NAME": "Un placer conocerte, :NAME",
+    "Prazer em conhecê-lo, :Name": "Un placer conocerte, :Name",
+    "Vá para a página de teste de pluralização": "Va a la página de pruebas de pluralización",
+    "Pluralização": "Pluralización",
+    "Digite um número de laranjas": "Ingresa un número de naranjas",
+    "Tem uma laranjaa|Tem muitas laranjas": "Hay una naranja|Hay muchas naranjas",
+    "{0} Não tem laranajas|[1,10] Tem algumas laranajas|[11,*] Tem muitas laranajas": "{0} No hay naranjas|[1,10] Hay algunas naranjas|[11,*] Hay muchas naranjas"
+}
